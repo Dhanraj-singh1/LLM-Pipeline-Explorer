@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#06070a] text-slate-100 font-sans selection:bg-amber-500/30 selection:text-amber-200;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(239, 68, 68, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 85% 30%, rgba(0, 245, 255, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 15% 70%, rgba(255, 215, 0, 0.06) 0%, transparent 40%),
+      linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(10, 12, 18, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(234, 179, 8, 0.35);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(234, 179, 8, 0.7);
+}
+
+/* Tactical HUD Reticles & Borders */
+.hud-corner {
+  position: relative;
+}
+.hud-corner::before, .hud-corner::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+}
+.hud-corner::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid #ffd700;
+  border-left: 2px solid #ffd700;
+}
+.hud-corner::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid #ffd700;
+  border-right: 2px solid #ffd700;
+}
+
+.hud-corner-red {
+  position: relative;
+}
+.hud-corner-red::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #ef4444;
+  border-left: 2px solid #ef4444;
+  pointer-events: none;
+}
+.hud-corner-red::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #ef4444;
+  border-right: 2px solid #ef4444;
+  pointer-events: none;
+}
+
+.hud-corner-cyan {
+  position: relative;
+}
+.hud-corner-cyan::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #00f5ff;
+  border-left: 2px solid #00f5ff;
+  pointer-events: none;
+}
+.hud-corner-cyan::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #00f5ff;
+  border-right: 2px solid #00f5ff;
+  pointer-events: none;
+}
+
+/* Hologram Glows */
+.glow-gold {
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.25), inset 0 0 15px rgba(255, 215, 0, 0.1);
+}
+.glow-red {
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.3), inset 0 0 15px rgba(239, 68, 68, 0.15);
+}
+.glow-arc {
+  box-shadow: 0 0 25px rgba(0, 245, 255, 0.35), inset 0 0 15px rgba(0, 245, 255, 0.15);
+}
+
+/* Scanline Overlay */
+.scanline-bg {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+}
